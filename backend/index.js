@@ -2,7 +2,11 @@ const express = require('express')
 const app = express();
 const {CreateTodo,UpdateTodo} = require('../backend/types.js')
 const {todo} = require('../backend/db.js')
+const cors = require("cors")
+app.use(cors());
+   
 app.use(express.json())
+
 
 app.post('/todo',async function(req,res){
     const createPayload = req.body
